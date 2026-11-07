@@ -17,35 +17,66 @@
 </p>
 
 <p align="center">
-  <img src="docs/demo.gif" alt="Animated demo: a cursor starts a class diagram, adds and types into boxes, moves a box, edits a row, then starts an ER diagram" width="800">
+  <img src="docs/demo.gif" alt="Animated demo: a cursor starts a class diagram, chooses to save it, adds and types into boxes, moves a box, edits a row, connects two boxes, then starts an ER diagram" width="800">
 </p>
 
 ## About
 
 Many diagram tools make simple work slow. You drag shapes from a panel, double-click to type and memorize shortcuts. Boxline removes those steps, so you click where you want a box and start typing.
 
-> [!NOTE]
-> Boxline is in early development. Connecting lines and saving aren't available yet, so anything you draw is lost when you refresh or leave the page.
-
 ## Features
 
-- **UML class and ER diagrams:** pick one on the landing page, and the editor opens right away.
-- **Click to add:** click an empty spot to add a box with the cursor ready for typing.
-- **Fast typing:** press Enter to add a row, and press Enter on an empty row to finish.
-- **One-click editing:** click any text once to change it.
-- **Easy moving:** drag a box from anywhere, including its text.
-- **Tidy boxes:** boxes grow to fit their text, and blank boxes remove themselves.
+### Start a diagram
+
+Pick a UML class or ER diagram, then choose whether to save it. Each new diagram asks once.
+
+<img src="public/guides/start-a-diagram.gif" alt="A cursor presses New class diagram, then Yes, save it, and the editor opens" width="640">
+
+### Add and type
+
+Click an empty spot to add a box with the cursor ready. Press Enter for each row, and on an empty row to finish.
+
+<img src="public/guides/add-and-type.gif" alt="A cursor clicks the canvas, and a Customer box is typed with two rows" width="640">
+
+### Move and edit
+
+Drag a box from anywhere to move it, and click any text once to change it. Boxes grow to fit their text, and blank boxes remove themselves.
+
+<img src="public/guides/move-and-edit.gif" alt="A cursor drags an Order box, then changes one of its rows" width="640">
+
+### Connect boxes
+
+Drag from a box's edge to another box, or to an empty spot to make a new connected box. Lines choose their own route and follow when you move a box.
+
+<img src="public/guides/connect-boxes.gif" alt="A cursor drags a line from Customer to Order, then drags another line to an empty spot to create an Address box" width="640">
+
+### Auto-sync to your file
+
+After you save, every change syncs to your file about a second after you stop. You can see the file in File Explorer, and a browser backup protects recent changes.
+
+<img src="public/guides/auto-sync.gif" alt="A row is edited, and the top bar changes from Syncing to Synced" width="640">
+
+### Come back later
+
+Press **Continue** on the landing page to reopen your last diagram, or **Open a saved file** to open another one.
+
+<img src="public/guides/come-back.gif" alt="A cursor presses Continue on the landing page, and the saved diagram opens" width="640">
+
+### Rename a diagram
+
+Click the name in the top bar and type a new one. A save window asks you to confirm it, and warns you if that name is already taken.
+
+<img src="public/guides/rename.gif" alt="A cursor changes the diagram name in the top bar to Shop classes" width="640">
+
+### Also included
+
+- **Built-in help:** a short guide appears before your first diagram, and the **Help** button reopens it at any time.
+- **Outside changes:** Boxline reloads a file that changes elsewhere, and asks which version to keep if you've changed it too.
 - **Light and dark themes:** the theme follows your system setting.
 - **Private by design:** there's no account, database or backend.
 
-## How to use
-
-1. Press **New class diagram** or **New ER diagram**.
-2. Click an empty spot on the canvas and type a name.
-3. Press **Enter** to add a row, then keep typing.
-4. Press **Enter** on an empty row to finish the box.
-5. Drag a box to move it, or click its text to change it.
-6. Remove a box with its **×** button or the **Delete** key.
+> [!IMPORTANT]
+> Auto-sync needs a browser with file access, such as Chrome or Edge. Other browsers can draw diagrams but can't save them yet.
 
 ## Set up locally
 
@@ -54,7 +85,7 @@ Many diagram tools make simple work slow. You drag shapes from a panel, double-c
 - [Node.js](https://nodejs.org) 20.9 or newer
 - npm, which comes with Node.js
 - [Git](https://git-scm.com)
-- A modern browser such as Chrome or Edge
+- Chrome or Edge, for auto-sync
 
 ### Install and run
 
@@ -103,7 +134,7 @@ Please follow the project's code style:
 
 ## Privacy
 
-Boxline has no accounts, database or API routes, and it doesn't collect your diagrams. The build downloads its fonts from Google Fonts and includes them in the site, so people using Boxline don't contact Google for them.
+Boxline has no accounts, database or API routes, and it doesn't collect your diagrams. Your diagrams stay in the files you choose, with temporary backups in your browser. The build downloads its fonts from Google Fonts and includes them in the site, so people using Boxline don't contact Google for them.
 
 ## Built with
 
@@ -111,6 +142,8 @@ Boxline has no accounts, database or API routes, and it doesn't collect your dia
 - [React](https://react.dev)
 - [TypeScript](https://www.typescriptlang.org)
 - [React Flow](https://reactflow.dev)
+- [Lucide](https://lucide.dev)
+- [idb-keyval](https://github.com/jakearchibald/idb-keyval)
 
 ## License
 
