@@ -1,0 +1,4 @@
+.rows {
+  padding-block: var(--space-1);
+  border-top: var(--line-width) solid var(--color-text);
+}
