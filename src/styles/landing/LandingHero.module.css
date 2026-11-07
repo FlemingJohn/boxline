@@ -1,11 +1,18 @@
 .page {
   display: grid;
   gap: var(--space-7);
+  align-content: start;
+  width: 100%;
   max-width: var(--content-maximum-width);
   min-height: 100%;
   margin: 0 auto;
-  padding: var(--space-5) max(var(--space-4), env(safe-area-inset-right, 0px));
-  align-content: start;
+  padding-block: var(--space-5) var(--space-7);
+  padding-left: max(var(--space-5), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--space-5), env(safe-area-inset-right, 0px));
+}
+
+.page > * {
+  min-width: 0;
 }
 
 .brand {
@@ -27,8 +34,15 @@
 
 .hero {
   display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.copy {
+  display: grid;
   gap: var(--space-5);
-  max-width: 44rem;
+  min-width: 0;
 }
 
 .title {
@@ -42,8 +56,13 @@
 }
 
 .text {
-  max-width: 34rem;
   margin: 0;
   color: var(--color-text-secondary);
   font-size: var(--size-text-large);
+}
+
+@media (max-width: 52rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
