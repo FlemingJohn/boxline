@@ -1,0 +1,25 @@
+.logo {
+  display: block;
+  flex: none;
+}
+
+.filledBox {
+  fill: currentColor;
+}
+
+.openBox {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.line {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.dot {
+  fill: var(--color-accent);
+}
