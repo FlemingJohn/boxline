@@ -1,29 +1,31 @@
 "use client";
 
 import { ReactFlowProvider } from "@xyflow/react";
-import { DiagramCanvas } from "@/components/editor/DiagramCanvas";
-import { EditorTopBar } from "@/components/editor/EditorTopBar";
-import { HintBar } from "@/components/editor/HintBar";
-import { useIsTyping } from "@/hooks/useIsTyping";
+import { useState } from "react";
+import { EditorWorkspace } from "@/components/editor/EditorWorkspace";
+import { GuideDialog } from "@/components/guide/GuideDialog";
+import { ContinueDialog } from "@/components/saving/ContinueDialog";
+import { SaveQuestionDialog } from "@/components/saving/SaveQuestionDialog";
+import { useGuideProgress } from "@/hooks/useGuideProgress";
 import { DiagramRulesContext } from "@/lib/diagram/DiagramRulesContext";
 import { getDiagramRules } from "@/lib/diagram/getDiagramRules";
-import styles from "@/styles/editor/EditorScreen.module.css";
 import type { EditorScreenProps } from "@/types/components/EditorScreenProps";
+import type { DiagramSession } from "@/types/saving/DiagramSession";
 
-export function EditorScreen({ kind }: EditorScreenProps) {
+export function EditorScreen({ kind, startsFromLastDiagram }: EditorScreenProps) {
   const rules = getDiagramRules(kind);
-  const { isTyping, handleFocus, handleBlur } = useIsTyping();
+  const { hasLoaded, hasFinished, finishGuide } = useGuideProgress();
+  const [session, setSession] = useState<DiagramSession | null>(null);
+
+  if (!hasLoaded) return null;
+  if (!hasFinished) return <GuideDialog finishLabel="Start drawing" showsWelcome onFinish={finishGuide} />;
 
   return (
     <DiagramRulesContext value={rules}>
       <ReactFlowProvider>
-        <div className={styles.screen}>
-          <EditorTopBar label={rules.label} />
-          <main className={styles.canvasArea} onFocus={handleFocus} onBlur={handleBlur}>
-            <DiagramCanvas />
-          </main>
-          <HintBar isTyping={isTyping} />
-        </div>
+        {session && <EditorWorkspace session={session} rules={rules} />}
+        {!session && startsFromLastDiagram && <ContinueDialog kind={kind} onStart={setSession} />}
+        {!session && !startsFromLastDiagram && <SaveQuestionDialog rules={rules} onStart={setSession} />}
       </ReactFlowProvider>
     </DiagramRulesContext>
   );
