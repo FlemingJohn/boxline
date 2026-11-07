@@ -1,0 +1,21 @@
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: var(--space-3);
+}
+
+.text {
+  display: grid;
+  min-width: 0;
+}
+
+.text strong {
+  font-size: var(--size-text-body);
+  font-weight: 600;
+}
+
+.text small {
+  font-size: var(--size-text-small);
+  font-weight: 400;
+  opacity: 0.85;
+}
