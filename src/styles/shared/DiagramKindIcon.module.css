@@ -1,0 +1,15 @@
+.icon {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.outline {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+}
+
+.filled {
+  fill: currentColor;
+}
