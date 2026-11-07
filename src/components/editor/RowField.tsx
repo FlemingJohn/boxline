@@ -16,8 +16,15 @@ export function RowField(props: RowFieldProps) {
     onFocus();
   };
 
+  const handleClick = () => {
+    const input = inputRef.current;
+    if (!input || document.activeElement === input) return;
+    input.focus({ preventScroll: true });
+    input.setSelectionRange(input.value.length, input.value.length);
+  };
+
   return (
-    <div className={styles[variant]} onClick={() => inputRef.current?.focus({ preventScroll: true })}>
+    <div className={styles[variant]} onClick={handleClick}>
       <input
         ref={inputRef}
         className={isFocused ? `${styles.input} nodrag` : styles.input}
