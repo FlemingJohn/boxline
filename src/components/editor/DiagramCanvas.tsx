@@ -1,16 +1,21 @@
-import { Background, BackgroundVariant, ReactFlow, useReactFlow } from "@xyflow/react";
+import { Background, BackgroundVariant, ConnectionMode, ReactFlow, useReactFlow } from "@xyflow/react";
 import "@xyflow/react/dist/base.css";
 import { useRef, type MouseEvent } from "react";
+import { ConnectionDraft } from "@/components/editor/ConnectionDraft";
+import { ConnectionLine } from "@/components/editor/ConnectionLine";
 import { ItemCard } from "@/components/editor/ItemCard";
-import { useDiagramItems } from "@/hooks/useDiagramItems";
+import { useConnectionDrawing } from "@/hooks/useConnectionDrawing";
 import { isTextFieldFocused } from "@/lib/diagram/isTextFieldFocused";
 import styles from "@/styles/editor/DiagramCanvas.module.css";
+import type { DiagramCanvasProps } from "@/types/components/DiagramCanvasProps";
 
 const itemTypes = { item: ItemCard };
+const connectionTypes = { line: ConnectionLine };
 
-export function DiagramCanvas() {
-  const { items, handleItemsChange, addItemAt } = useDiagramItems();
+export function DiagramCanvas(props: DiagramCanvasProps) {
+  const { items, connections, onItemsChange, onConnectionsChange, onAddItem, onAddConnection } = props;
   const { screenToFlowPosition } = useReactFlow();
+  const drawing = useConnectionDrawing(onAddItem, onAddConnection);
   const wasTypingOnPress = useRef(false);
 
   const handlePress = () => {
@@ -18,18 +23,25 @@ export function DiagramCanvas() {
   };
 
   const handlePaneClick = (event: MouseEvent) => {
-    if (wasTypingOnPress.current) return;
-    addItemAt(screenToFlowPosition({ x: event.clientX, y: event.clientY }));
+    if (!wasTypingOnPress.current) onAddItem(screenToFlowPosition({ x: event.clientX, y: event.clientY }));
   };
 
   return (
     <div className={styles.canvas} onPointerDownCapture={handlePress}>
       <ReactFlow
         nodes={items}
+        edges={connections}
         nodeTypes={itemTypes}
-        onNodesChange={handleItemsChange}
+        edgeTypes={connectionTypes}
+        connectionMode={ConnectionMode.Loose}
+        connectionLineComponent={ConnectionDraft}
+        connectOnClick={false}
+        isValidConnection={drawing.isValidConnection}
+        onNodesChange={onItemsChange}
+        onEdgesChange={onConnectionsChange}
+        onConnect={drawing.handleConnect}
+        onConnectEnd={drawing.handleConnectEnd}
         onPaneClick={handlePaneClick}
-        nodesConnectable={false}
         zoomOnDoubleClick={false}
         deleteKeyCode="Delete"
       >
