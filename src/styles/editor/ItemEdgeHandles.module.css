@@ -1,0 +1,75 @@
+.edge.edge {
+  position: absolute;
+  inset: -0.75rem;
+  z-index: 0;
+  width: auto;
+  min-width: 0;
+  height: auto;
+  min-height: 0;
+  border: var(--line-width) dashed transparent;
+  border-radius: var(--radius-medium);
+  background: transparent;
+  cursor: crosshair;
+  transform: none;
+}
+
+:global(.react-flow__node:hover) .edge.edge,
+:global(.react-flow__node:focus-within) .edge.edge {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.dot {
+  position: absolute;
+  width: 0.5625rem;
+  height: 0.5625rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dot:nth-child(1) {
+  top: 0;
+  left: calc(50% - 0.28125rem);
+}
+
+.dot:nth-child(2) {
+  bottom: 0;
+  left: calc(50% - 0.28125rem);
+}
+
+.dot:nth-child(3) {
+  top: calc(50% - 0.28125rem);
+  left: 0;
+}
+
+.dot:nth-child(4) {
+  top: calc(50% - 0.28125rem);
+  right: 0;
+}
+
+:global(.react-flow__node:hover) .dot,
+:global(.react-flow__node:focus-within) .dot {
+  opacity: 1;
+}
+
+.dropArea.dropArea {
+  position: absolute;
+  inset: -0.75rem;
+  z-index: 5;
+  width: auto;
+  min-width: 0;
+  height: auto;
+  min-height: 0;
+  border: var(--line-width) dashed transparent;
+  border-radius: var(--radius-medium);
+  background: transparent;
+  cursor: crosshair;
+  transform: none;
+}
+
+.dropArea.dropArea:hover,
+.dropArea.dropArea:global(.valid) {
+  border-color: var(--color-accent);
+}
