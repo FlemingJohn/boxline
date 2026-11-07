@@ -1,0 +1,145 @@
+.preview {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+}
+
+.frame {
+  fill: var(--color-background);
+  stroke: var(--color-rule);
+}
+
+.surface {
+  fill: var(--color-surface);
+}
+
+.gridDot {
+  fill: var(--color-rule);
+}
+
+.divider {
+  stroke: var(--color-rule);
+}
+
+.barTitle {
+  fill: var(--color-text);
+  font: 600 12px var(--font-body), "Segoe UI", system-ui, sans-serif;
+}
+
+.barMuted {
+  fill: var(--color-text-secondary);
+  font: 400 11px var(--font-body), "Segoe UI", system-ui, sans-serif;
+}
+
+.box {
+  fill: var(--color-surface);
+  stroke: var(--color-text);
+  stroke-width: 1.5;
+}
+
+.boxLine,
+.link {
+  fill: none;
+  stroke: var(--color-text);
+  stroke-width: 1.5;
+}
+
+.boxName {
+  fill: var(--color-text);
+  font: 600 13px var(--font-code), Consolas, monospace;
+}
+
+.rowText {
+  fill: var(--color-text);
+  font: 400 13px var(--font-code), Consolas, monospace;
+}
+
+.linkDot {
+  fill: var(--color-accent);
+}
+
+.cursor {
+  display: none;
+}
+
+.cursorShape {
+  fill: var(--color-text);
+  stroke: var(--color-surface);
+  stroke-width: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cursor {
+    display: block;
+    animation: move-cursor 9s infinite;
+  }
+
+  .newBox {
+    animation: show-box 9s infinite;
+  }
+
+  .firstRow {
+    animation: show-first-row 9s infinite;
+  }
+
+  .secondRow {
+    animation: show-second-row 9s infinite;
+  }
+
+  .thirdRow {
+    animation: show-third-row 9s infinite;
+  }
+
+  .link {
+    stroke-dasharray: 1;
+    animation: draw-link 9s infinite;
+  }
+
+  .linkDot {
+    animation: show-link-dot 9s infinite;
+  }
+}
+
+@keyframes move-cursor {
+  0%, 40% { transform: translate(392px, 168px); opacity: 1; }
+  48%, 52% { transform: translate(158px, 136px); opacity: 1; }
+  68%, 90% { transform: translate(276px, 136px); opacity: 1; }
+  96%, 100% { transform: translate(276px, 136px); opacity: 0; }
+}
+
+@keyframes show-box {
+  0%, 8% { opacity: 0; }
+  10%, 92% { opacity: 1; }
+  98%, 100% { opacity: 0; }
+}
+
+@keyframes show-first-row {
+  0%, 16% { opacity: 0; }
+  18%, 92% { opacity: 1; }
+  98%, 100% { opacity: 0; }
+}
+
+@keyframes show-second-row {
+  0%, 25% { opacity: 0; }
+  27%, 92% { opacity: 1; }
+  98%, 100% { opacity: 0; }
+}
+
+@keyframes show-third-row {
+  0%, 34% { opacity: 0; }
+  36%, 92% { opacity: 1; }
+  98%, 100% { opacity: 0; }
+}
+
+@keyframes draw-link {
+  0%, 52% { stroke-dashoffset: 1; opacity: 1; }
+  68%, 92% { stroke-dashoffset: 0; opacity: 1; }
+  98%, 100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+@keyframes show-link-dot {
+  0%, 47% { opacity: 0; }
+  49%, 92% { opacity: 1; }
+  98%, 100% { opacity: 0; }
+}
