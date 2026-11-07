@@ -1,5 +1,10 @@
+.holder {
+  position: relative;
+}
+
 .card {
   position: relative;
+  z-index: 1;
   width: max-content;
   min-width: var(--item-minimum-width);
   max-width: var(--item-maximum-width);
@@ -13,7 +18,7 @@
 .card:focus-within,
 .selected {
   outline: 2px solid var(--color-accent);
-  outline-offset: 3px;
+  outline-offset: 2px;
 }
 
 .class > :first-child {
