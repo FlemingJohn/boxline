@@ -1,18 +1,26 @@
 .base {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-2);
   border-radius: var(--radius-medium);
   font-family: inherit;
   font-size: var(--size-text-small);
   font-weight: 500;
+  line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
 }
 
-.primary {
+.action {
+  min-height: var(--button-height);
+  padding: var(--space-1) var(--space-3);
+}
+
+.large {
   composes: base;
   gap: var(--space-3);
+  min-height: var(--button-height-large);
   padding: var(--space-3) var(--space-4);
   border: var(--line-width) solid var(--color-text);
   background: var(--color-text);
@@ -20,15 +28,37 @@
   text-align: left;
 }
 
+.large:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+}
+
+.primary {
+  composes: base action;
+  border: var(--line-width) solid var(--color-text);
+  background: var(--color-text);
+  color: var(--color-surface);
+}
+
 .primary:hover {
   border-color: var(--color-accent);
   background: var(--color-accent);
 }
 
+.warning {
+  composes: base action;
+  border: var(--line-width) solid var(--color-warning);
+  background: var(--color-warning);
+  color: var(--color-surface);
+}
+
+.warning:hover {
+  opacity: 0.88;
+}
+
 .plain {
-  composes: base;
-  padding: var(--space-1) var(--space-3);
-  border: 1px solid var(--color-rule);
+  composes: base action;
+  border: var(--line-width) solid var(--color-rule);
   background: var(--color-surface);
   color: var(--color-text);
 }
@@ -39,7 +69,6 @@
 
 .remove {
   composes: base;
-  justify-content: center;
   width: 1.375rem;
   height: 1.375rem;
   padding: 0;
@@ -47,6 +76,11 @@
   border-radius: 50%;
   background: var(--color-surface);
   color: var(--color-text);
+}
+
+.remove svg {
+  width: 0.75rem;
+  height: 0.75rem;
 }
 
 .remove:hover {
