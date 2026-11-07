@@ -1,0 +1,44 @@
+.section {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display), "Segoe UI", system-ui, sans-serif;
+  font-size: var(--size-text-heading);
+  font-weight: 600;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  gap: var(--space-6) var(--space-5);
+}
+
+.step {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.stepTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: var(--space-1) 0 0;
+  font-size: var(--size-text-body);
+  font-weight: 600;
+}
+
+.stepIcon {
+  display: inline-flex;
+  color: var(--color-accent);
+}
+
+.stepText {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+}
