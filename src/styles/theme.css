@@ -1,0 +1,46 @@
+:root {
+  --color-background: #f4f7f8;
+  --color-surface: #ffffff;
+  --color-text: #16202b;
+  --color-text-secondary: #53616e;
+  --color-rule: #d3dbe1;
+  --color-accent: #0b5ed7;
+  --color-accent-soft: #e4eefc;
+  --color-key: #a4470a;
+
+  --size-text-small: 0.8125rem;
+  --size-text-body: 1rem;
+  --size-text-large: 1.2rem;
+  --size-text-brand: 1.25rem;
+  --size-text-title: clamp(2.5rem, 7vw, 4.5rem);
+  --size-text-item: 0.8125rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 4rem;
+
+  --radius-small: 4px;
+  --radius-medium: 6px;
+  --line-width: 1.5px;
+  --item-minimum-width: 8.75rem;
+  --item-maximum-width: 20rem;
+  --content-maximum-width: 65rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #10161c;
+    --color-surface: #18212a;
+    --color-text: #e8eef2;
+    --color-text-secondary: #9dabb7;
+    --color-rule: #2f3c47;
+    --color-accent: #79aeff;
+    --color-accent-soft: #1b2d47;
+    --color-key: #f0aa6c;
+    color-scheme: dark;
+  }
+}
