@@ -1,1 +1,1 @@
-export type ButtonVariant = "primary" | "plain" | "remove";
+export type ButtonVariant = "large" | "primary" | "plain" | "remove" | "warning";
