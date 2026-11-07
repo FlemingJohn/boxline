@@ -2,12 +2,23 @@ import { useNodesState, type XYPosition } from "@xyflow/react";
 import { makeNewItem } from "@/lib/diagram/makeNewItem";
 import type { DiagramItem } from "@/types/diagram/DiagramItem";
 
-export function useDiagramItems() {
-  const [items, setItems, handleItemsChange] = useNodesState<DiagramItem>([]);
+export function useDiagramItems(initialItems: DiagramItem[]) {
+  const [items, setItems, handleItemsChange] = useNodesState<DiagramItem>(initialItems);
 
   const addItemAt = (clickPosition: XYPosition) => {
-    setItems((currentItems) => [...currentItems, makeNewItem(clickPosition)]);
+    const newItem = makeNewItem(clickPosition);
+    setItems((currentItems) => [...currentItems, newItem]);
+    return newItem;
   };
 
-  return { items, handleItemsChange, addItemAt };
+  const replaceItems = (newItems: DiagramItem[]) => {
+    setItems((currentItems) =>
+      newItems.map((item) => ({
+        ...item,
+        measured: currentItems.find((currentItem) => currentItem.id === item.id)?.measured,
+      })),
+    );
+  };
+
+  return { items, handleItemsChange, addItemAt, replaceItems };
 }
