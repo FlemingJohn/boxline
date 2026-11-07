@@ -1,0 +1,39 @@
+.card {
+  position: relative;
+  width: max-content;
+  min-width: var(--item-minimum-width);
+  max-width: var(--item-maximum-width);
+  border: var(--line-width) solid var(--color-text);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: grab;
+}
+
+.card:focus-within,
+.selected {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.class > :first-child {
+  background: transparent;
+}
+
+.er > :first-child {
+  border-radius: 2px 2px 0 0;
+  background: var(--color-text);
+  color: var(--color-surface);
+}
+
+.removeHolder {
+  position: absolute;
+  top: -0.6875rem;
+  right: -0.6875rem;
+  display: none;
+}
+
+.card:hover .removeHolder,
+.card:focus-within .removeHolder {
+  display: block;
+}
