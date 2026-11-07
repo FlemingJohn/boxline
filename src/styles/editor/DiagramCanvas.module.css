@@ -1,0 +1,8 @@
+.canvas {
+  --xy-background-color: var(--color-surface);
+  --xy-background-pattern-dots-color: var(--color-rule);
+  --xy-attribution-background-color: transparent;
+
+  height: 100%;
+  cursor: cell;
+}
