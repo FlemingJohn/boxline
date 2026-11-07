@@ -7,12 +7,15 @@
   --color-accent: #0b5ed7;
   --color-accent-soft: #e4eefc;
   --color-key: #a4470a;
+  --color-warning: #b3261e;
+  --color-overlay: rgb(22 32 43 / 0.45);
 
   --size-text-small: 0.8125rem;
   --size-text-body: 1rem;
   --size-text-large: 1.2rem;
   --size-text-brand: 1.25rem;
-  --size-text-title: clamp(2.5rem, 7vw, 4.5rem);
+  --size-text-heading: 1.75rem;
+  --size-text-title: clamp(2.25rem, 4.5vw, 3.5rem);
   --size-text-item: 0.8125rem;
 
   --space-1: 0.25rem;
@@ -26,6 +29,8 @@
   --radius-small: 4px;
   --radius-medium: 6px;
   --line-width: 1.5px;
+  --button-height: 2.25rem;
+  --button-height-large: 3.5rem;
   --item-minimum-width: 8.75rem;
   --item-maximum-width: 20rem;
   --content-maximum-width: 65rem;
@@ -41,6 +46,8 @@
     --color-accent: #79aeff;
     --color-accent-soft: #1b2d47;
     --color-key: #f0aa6c;
+    --color-warning: #f2998f;
+    --color-overlay: rgb(0 0 0 / 0.6);
     color-scheme: dark;
   }
 }
