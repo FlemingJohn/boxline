@@ -2,7 +2,17 @@
   --xy-background-color: var(--color-surface);
   --xy-background-pattern-dots-color: var(--color-rule);
   --xy-attribution-background-color: transparent;
+  --xy-edge-stroke: var(--color-text);
+  --xy-edge-stroke-width: 1.5;
+  --xy-edge-stroke-selected: var(--color-accent);
 
   height: 100%;
-  cursor: cell;
+}
+
+.canvas :global(.react-flow__pane.draggable) {
+  cursor: default;
+}
+
+.canvas :global(.react-flow__pane.draggable.dragging) {
+  cursor: grabbing;
 }
