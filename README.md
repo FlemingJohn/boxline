@@ -52,6 +52,8 @@ Drag a box from anywhere to move it, and click any text once to change it. Boxes
 
 Drag from a box's edge to another box, or to an empty spot to make a new connected box. Lines choose their own route and follow when you move a box.
 
+When one box has several lines, each line leaves from its own spot along the side, ordered by where the other box is, so lines don't pile on top of each other. Boxes above or below connect through their top and bottom, and boxes side by side connect through their sides.
+
 <img src="public/guides/connect-boxes.gif" alt="A cursor drags a line from Customer to Order, then drags another line to an empty spot to create an Address box" width="640">
 
 ### Line types and labels
@@ -92,7 +94,15 @@ Press **Export** and choose a PNG or SVG image. Exports always use the light the
 
 ### Undo, align and tidy
 
-Press **Ctrl+Z** to undo and **Ctrl+Y** to redo, or use the buttons in the top bar. Boxes snap into line as you drag them, and **Tidy up** arranges the whole diagram. The zoom bar shows the zoom level and fits the diagram to the screen.
+Press **Ctrl+Z** to undo and **Ctrl+Y** to redo, or use the buttons in the top bar. Boxes snap into line as you drag them, and the zoom bar shows the zoom level and fits the diagram to the screen.
+
+**Tidy up** arranges the whole diagram in one click, with even spacing between layers:
+
+- Parent classes go above their children for inheritance and implementation.
+- For other lines, the box you drew from goes above the box you drew to, so a class with many relationships sits on top like a tree.
+- In ER diagrams, the table you drew from goes above the table you drew to.
+
+You can undo a tidy-up with **Ctrl+Z**.
 
 <img src="public/guides/undo-and-tidy.gif" alt="A cursor presses Tidy up to arrange three boxes, then undoes and redoes it" width="640">
 
