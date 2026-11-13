@@ -54,6 +54,8 @@ export function EditorWorkspace({ session, rules }: EditorWorkspaceProps) {
           onConnectionsChange={diagram.handleConnectionsChange}
           onAddItem={diagram.addItemAt}
           onAddConnection={diagram.addConnection}
+          onUpdateConnection={diagram.updateConnection}
+          onFlipConnection={diagram.flipConnection}
         />
       </main>
       <HintBar isTyping={isTyping} />
