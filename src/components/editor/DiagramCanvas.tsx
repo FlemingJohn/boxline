@@ -3,6 +3,8 @@ import "@xyflow/react/dist/base.css";
 import { useRef, type MouseEvent } from "react";
 import { ConnectionDraft } from "@/components/editor/ConnectionDraft";
 import { ConnectionLine } from "@/components/editor/ConnectionLine";
+import { ConnectionMarkers } from "@/components/editor/ConnectionMarkers";
+import { ConnectionPanel } from "@/components/editor/ConnectionPanel";
 import { ItemCard } from "@/components/editor/ItemCard";
 import { useConnectionDrawing } from "@/hooks/useConnectionDrawing";
 import { isTextFieldFocused } from "@/lib/diagram/isTextFieldFocused";
@@ -28,6 +30,7 @@ export function DiagramCanvas(props: DiagramCanvasProps) {
 
   return (
     <div className={styles.canvas} onPointerDownCapture={handlePress}>
+      <ConnectionMarkers />
       <ReactFlow
         nodes={items}
         edges={connections}
@@ -46,6 +49,11 @@ export function DiagramCanvas(props: DiagramCanvasProps) {
         deleteKeyCode="Delete"
       >
         <Background variant={BackgroundVariant.Dots} gap={20} size={1} />
+        <ConnectionPanel
+          connections={connections}
+          onUpdateConnection={props.onUpdateConnection}
+          onFlipConnection={props.onFlipConnection}
+        />
       </ReactFlow>
     </div>
   );
