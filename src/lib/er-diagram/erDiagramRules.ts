@@ -8,6 +8,7 @@ export const erDiagramRules: DiagramRules = {
   defaultFileName: "Untitled ER diagram.boxline.json",
   itemNamePlaceholder: "Table name",
   rowPlaceholder: "column_name PK",
+  tidyDirection: "TB",
   describeRow: describeTableRow,
   isNameEmphasised: () => false,
   getConnectionLook: getTableConnectionLook,
