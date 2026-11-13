@@ -17,6 +17,10 @@
 </p>
 
 <p align="center">
+  <a href="https://boxline-app.vercel.app"><strong>Try Boxline</strong></a>
+</p>
+
+<p align="center">
   <img src="docs/demo.gif" alt="Animated demo: a cursor starts a class diagram, chooses to save it, adds and types into boxes, moves a box, edits a row, connects two boxes, then starts an ER diagram" width="800">
 </p>
 
@@ -90,7 +94,7 @@ Click the name in the top bar and type a new one. A save window asks you to conf
 ### Install and run
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/boxline.git
+git clone https://github.com/FlemingJohn/boxline.git
 cd boxline
 npm install
 npm run dev
