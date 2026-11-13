@@ -25,12 +25,13 @@ export function ItemCard({ id, data, selected }: NodeProps<DiagramItem>) {
           variant="name"
           value={data.name}
           placeholder={rules.itemNamePlaceholder}
+          isEmphasised={rules.isNameEmphasised(data.name)}
           shouldFocus={editing.shouldFocusField(nameFieldId)}
           onChange={editing.setName}
           onEnter={editing.handleNameEnter}
           onFocus={() => editing.setFocusedFieldId(nameFieldId)}
         />
-        <ItemRows rows={data.rows} placeholder={rules.rowPlaceholder} editing={editing} />
+        <ItemRows rows={data.rows} rules={rules} editing={editing} />
         <div className={`${styles.removeHolder} nodrag`}>
           <Tooltip text="Remove box">
             <Button variant="remove" label="Remove box" onClick={editing.removeItem}>
