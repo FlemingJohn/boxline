@@ -9,7 +9,7 @@ export function useCanvasTidy({ items, connections, onMoveItems }: DiagramCanvas
 
   const tidyUp = () => {
     if (items.length === 0) return;
-    onMoveItems(getTidyPositions(items, connections, rules.tidyDirection));
+    onMoveItems(getTidyPositions(items, connections, rules.getUpperAndLowerIds));
     requestAnimationFrame(() => fitView({ padding: 0.2, maxZoom: 1, duration: 300 }));
   };
 
