@@ -9,7 +9,7 @@ import styles from "@/styles/editor/EditorTopBar.module.css";
 import type { EditorTopBarProps } from "@/types/components/EditorTopBarProps";
 
 export function EditorTopBar(props: EditorTopBarProps) {
-  const { label, diagramName, onRename, onHelp, onHomeNavigate, children } = props;
+  const { label, diagramName, tools, onRename, onHelp, onHomeNavigate, children } = props;
 
   return (
     <header className={styles.bar}>
@@ -22,6 +22,7 @@ export function EditorTopBar(props: EditorTopBarProps) {
       <DiagramNameField name={diagramName} onRename={onRename} />
       <span className={styles.kind}>{label}</span>
       {children}
+      {tools}
       <Tooltip text="See how Boxline works" alignment="end">
         <Button variant="plain" onClick={onHelp}><Icon shape={CircleHelp} />Help</Button>
       </Tooltip>
