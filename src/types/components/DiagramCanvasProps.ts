@@ -12,4 +12,5 @@ export type DiagramCanvasProps = {
   onAddConnection: (sourceId: string, targetId: string) => void;
   onUpdateConnection: (connectionId: string, changes: Partial<ConnectionData>) => void;
   onFlipConnection: (connectionId: string) => void;
+  onMoveItems: (positions: Map<string, XYPosition>) => void;
 };
