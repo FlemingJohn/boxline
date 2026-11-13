@@ -1,8 +1,9 @@
 import type { useItemEditing } from "@/hooks/useItemEditing";
+import type { DiagramRules } from "@/types/diagram/DiagramRules";
 import type { ItemRow } from "@/types/diagram/ItemRow";
 
 export type ItemRowsProps = {
   rows: ItemRow[];
-  placeholder: string;
+  rules: DiagramRules;
   editing: ReturnType<typeof useItemEditing>;
 };
