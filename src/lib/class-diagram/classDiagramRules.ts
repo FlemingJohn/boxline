@@ -9,6 +9,7 @@ export const classDiagramRules: DiagramRules = {
   defaultFileName: "Untitled class diagram.boxline.json",
   itemNamePlaceholder: "Class name",
   rowPlaceholder: "+ name: string",
+  tidyDirection: "BT",
   describeRow: describeClassRow,
   isNameEmphasised: isClassNameEmphasised,
   getConnectionLook: getClassConnectionLook,
