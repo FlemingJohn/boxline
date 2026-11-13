@@ -1,0 +1,16 @@
+.preview {
+  flex: none;
+  width: 2.75rem;
+  height: 1rem;
+  overflow: visible;
+}
+
+.line {
+  fill: none;
+  stroke: var(--color-text);
+  stroke-width: 1.5;
+}
+
+.dashed {
+  stroke-dasharray: 5 3;
+}
