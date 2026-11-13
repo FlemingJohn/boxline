@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 export type EditorTopBarProps = {
   label: string;
   diagramName: string;
+  tools: ReactNode;
   onRename: (newName: string) => void;
   onHelp: () => void;
   onHomeNavigate: LinkProps["onNavigate"];
