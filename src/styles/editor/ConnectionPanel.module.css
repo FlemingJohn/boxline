@@ -1,0 +1,65 @@
+.panel {
+  display: grid;
+  gap: var(--space-3);
+  width: min(24rem, calc(100vw - var(--space-6)));
+  max-height: calc(100% - var(--space-6));
+  overflow: auto;
+  padding: var(--space-4);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-medium);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--size-text-body);
+  font-weight: 600;
+}
+
+.group {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-1);
+}
+
+.labels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.field {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.fieldLabel {
+  color: var(--color-text-secondary);
+  font-size: var(--size-text-small);
+}
+
+.fieldInput {
+  width: 100%;
+  min-width: 0;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-code), Consolas, monospace;
+  font-size: var(--size-text-small);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
