@@ -5,4 +5,5 @@ export type GuideStep = {
   title: string;
   text: string;
   icon: LucideIcon;
+  isInFirstGuide: boolean;
 };
