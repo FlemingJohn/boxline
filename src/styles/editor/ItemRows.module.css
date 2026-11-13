@@ -1,4 +1,12 @@
 .rows {
+  display: flex;
+  flex-direction: column;
   padding-block: var(--space-1);
+  border-top: var(--line-width) solid var(--color-text);
+}
+
+.divider {
+  order: 2;
+  margin-block: var(--space-1);
   border-top: var(--line-width) solid var(--color-text);
 }
