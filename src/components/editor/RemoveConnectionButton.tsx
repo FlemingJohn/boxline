@@ -10,6 +10,7 @@ export function RemoveConnectionButton({ x, y, onRemove }: RemoveConnectionButto
       aria-label="Remove line"
       transform={`translate(${x} ${y})`}
       onClick={onRemove}
+      data-export-hidden="true"
     >
       <title>Remove line</title>
       <circle className={styles.removeCircle} r="11" />
