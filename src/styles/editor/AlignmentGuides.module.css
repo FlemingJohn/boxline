@@ -1,0 +1,15 @@
+.guides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.line {
+  stroke: var(--color-accent);
+  stroke-width: 1;
+  stroke-dasharray: 4 3;
+}
