@@ -1,6 +1,7 @@
 import { BaseEdge, getSmoothStepPath, useInternalNode, useReactFlow, type EdgeProps } from "@xyflow/react";
 import { ConnectionLabels } from "@/components/editor/ConnectionLabels";
 import { RemoveConnectionButton } from "@/components/editor/RemoveConnectionButton";
+import { useConnectionRoute } from "@/hooks/useConnectionRoute";
 import { useDiagramRules } from "@/hooks/useDiagramRules";
 import { defaultConnectionData } from "@/lib/diagram/defaultConnectionData";
 import { getConnectionRoute } from "@/lib/diagram/getConnectionRoute";
@@ -13,6 +14,7 @@ const cornerRadius = 8;
 
 export function ConnectionLine({ id, source, target, selected, data }: EdgeProps<DiagramConnection>) {
   const rules = useDiagramRules();
+  const sharedRoute = useConnectionRoute(id);
   const sourceItem = useInternalNode(source);
   const targetItem = useInternalNode(target);
   const { deleteElements } = useReactFlow();
@@ -20,7 +22,7 @@ export function ConnectionLine({ id, source, target, selected, data }: EdgeProps
 
   const lineData = data ?? defaultConnectionData;
   const look = rules.getConnectionLook(lineData);
-  const route = getConnectionRoute(getItemRectangle(sourceItem), getItemRectangle(targetItem));
+  const route = sharedRoute ?? getConnectionRoute(getItemRectangle(sourceItem), getItemRectangle(targetItem));
   const [path, middleX, middleY] = getSmoothStepPath({ ...route, borderRadius: cornerRadius });
 
   return (
