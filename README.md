@@ -54,6 +54,18 @@ Drag from a box's edge to another box, or to an empty spot to make a new connect
 
 <img src="public/guides/connect-boxes.gif" alt="A cursor drags a line from Customer to Order, then drags another line to an empty spot to create an Address box" width="640">
 
+### Line types and labels
+
+Click a line to choose association, inheritance, implementation, dependency, aggregation or composition. Add labels such as `1`, `places` and `0..*`. Type `+`, `-`, `#` or `~` before a row, and rows with `()` move into a methods section.
+
+<img src="public/guides/line-types.gif" alt="A line between Dog and Animal is changed to inheritance, then composition, and given an end label" width="640">
+
+### Keys and relationships
+
+In ER diagrams, type `PK` or `FK` after a column to mark its key. Click a line to choose exactly one, zero or one, one or many, or zero or many at each end.
+
+<img src="public/guides/er-keys.gif" alt="A customers table is typed with a primary key, then the line to orders is set to zero or many" width="640">
+
 ### Auto-sync to your file
 
 After you save, every change syncs to your file about a second after you stop. You can see the file in File Explorer, and a browser backup protects recent changes.
@@ -72,11 +84,23 @@ Click the name in the top bar and type a new one. A save window asks you to conf
 
 <img src="public/guides/rename.gif" alt="A cursor changes the diagram name in the top bar to Shop classes" width="640">
 
+### Export an image
+
+Press **Export** and choose a PNG or SVG image. Exports always use the light theme with a white background, and leave out editing handles.
+
+<img src="public/guides/export.gif" alt="A cursor presses Export, then PNG image, and the exported picture of two connected boxes appears" width="640">
+
+### Undo, align and tidy
+
+Press **Ctrl+Z** to undo and **Ctrl+Y** to redo, or use the buttons in the top bar. Boxes snap into line as you drag them, and **Tidy up** arranges the whole diagram. The zoom bar shows the zoom level and fits the diagram to the screen.
+
+<img src="public/guides/undo-and-tidy.gif" alt="A cursor presses Tidy up to arrange three boxes, then undoes and redoes it" width="640">
+
 ### Also included
 
 - **Built-in help:** a short guide appears before your first diagram, and the **Help** button reopens it at any time.
 - **Outside changes:** Boxline reloads a file that changes elsewhere, and asks which version to keep if you've changed it too.
-- **Light and dark themes:** the theme follows your system setting.
+- **Light and dark themes:** the theme follows your system setting, or choose light or dark with the theme button.
 - **Private by design:** there's no account, database or backend.
 
 > [!IMPORTANT]
@@ -148,6 +172,8 @@ Boxline has no accounts, database or API routes, and it doesn't collect your dia
 - [React Flow](https://reactflow.dev)
 - [Lucide](https://lucide.dev)
 - [idb-keyval](https://github.com/jakearchibald/idb-keyval)
+- [html-to-image](https://github.com/bubkoo/html-to-image)
+- [dagre](https://github.com/dagrejs/dagre)
 
 ## License
 
