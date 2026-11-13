@@ -9,8 +9,8 @@ export function GuideImage({ step }: GuideImageProps) {
         className={styles.image}
         src={`/guides/${step.id}.gif`}
         alt={`${step.title}: ${step.text}`}
-        width={900}
-        height={500}
+        width={1000}
+        height={560}
         loading="lazy"
       />
     </picture>
