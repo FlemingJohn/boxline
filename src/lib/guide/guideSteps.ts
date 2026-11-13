@@ -1,4 +1,16 @@
-import { FilePlus2, History, Move, Pencil, RefreshCw, Spline, SquarePlus } from "lucide-react";
+import {
+  ArrowDownToLine,
+  FilePlus2,
+  History,
+  KeyRound,
+  Move,
+  Pencil,
+  RefreshCw,
+  Spline,
+  SquarePlus,
+  Triangle,
+  Undo2,
+} from "lucide-react";
 import type { GuideStep } from "@/types/guide/GuideStep";
 
 export const guideSteps: GuideStep[] = [
@@ -7,41 +19,76 @@ export const guideSteps: GuideStep[] = [
     title: "Start a diagram",
     text: "Pick class or ER, then choose whether to save it. Each new diagram asks once.",
     icon: FilePlus2,
+    isInFirstGuide: true,
   },
   {
     id: "add-and-type",
     title: "Add and type",
     text: "Click an empty spot to add a box. Press Enter for each row, and on an empty row to finish.",
     icon: SquarePlus,
+    isInFirstGuide: true,
   },
   {
     id: "move-and-edit",
     title: "Move and edit",
     text: "Drag a box to move it. Click any text once to change it.",
     icon: Move,
+    isInFirstGuide: true,
   },
   {
     id: "connect-boxes",
     title: "Connect boxes",
     text: "Drag from a box's edge to another box, or to an empty spot to make a new box.",
     icon: Spline,
+    isInFirstGuide: true,
+  },
+  {
+    id: "line-types",
+    title: "Line types and labels",
+    text: "Click a line to choose inheritance, composition and more, and add labels like 1 and 0..*.",
+    icon: Triangle,
+    isInFirstGuide: false,
+  },
+  {
+    id: "er-keys",
+    title: "Keys and relationships",
+    text: "Type PK or FK after a column. Click a line to choose one, zero or one, or many at each end.",
+    icon: KeyRound,
+    isInFirstGuide: false,
   },
   {
     id: "auto-sync",
     title: "Auto-sync to your file",
     text: "After you save, every change syncs to your file about a second after you stop.",
     icon: RefreshCw,
+    isInFirstGuide: true,
   },
   {
     id: "come-back",
     title: "Come back later",
     text: "Press Continue on the landing page, and your diagram opens as you left it.",
     icon: History,
+    isInFirstGuide: true,
   },
   {
     id: "rename",
     title: "Rename a diagram",
     text: "Click the name in the top bar and type a new one. A save window asks you to confirm it.",
     icon: Pencil,
+    isInFirstGuide: true,
+  },
+  {
+    id: "export",
+    title: "Export an image",
+    text: "Press Export and choose PNG or SVG. Images always use the light theme.",
+    icon: ArrowDownToLine,
+    isInFirstGuide: false,
+  },
+  {
+    id: "undo-and-tidy",
+    title: "Undo, align and tidy",
+    text: "Press Ctrl+Z to undo. Boxes line up as you drag, and Tidy up arranges everything.",
+    icon: Undo2,
+    isInFirstGuide: false,
   },
 ];
