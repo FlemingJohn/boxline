@@ -1,5 +1,6 @@
 import { describeClassRow } from "@/lib/class-diagram/describeClassRow";
 import { getClassConnectionLook } from "@/lib/class-diagram/getClassConnectionLook";
+import { getClassUpperAndLowerIds } from "@/lib/class-diagram/getClassUpperAndLowerIds";
 import { isClassNameEmphasised } from "@/lib/class-diagram/isClassNameEmphasised";
 import type { DiagramRules } from "@/types/diagram/DiagramRules";
 
@@ -9,8 +10,8 @@ export const classDiagramRules: DiagramRules = {
   defaultFileName: "Untitled class diagram.boxline.json",
   itemNamePlaceholder: "Class name",
   rowPlaceholder: "+ name: string",
-  tidyDirection: "BT",
   describeRow: describeClassRow,
   isNameEmphasised: isClassNameEmphasised,
   getConnectionLook: getClassConnectionLook,
+  getUpperAndLowerIds: getClassUpperAndLowerIds,
 };
