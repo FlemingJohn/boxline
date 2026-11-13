@@ -4,13 +4,22 @@ import type { DiagramContent } from "@/types/diagram/DiagramContent";
 
 export function useDiagramContent(initialContent: DiagramContent) {
   const { items, handleItemsChange, addItemAt, replaceItems } = useDiagramItems(initialContent.items);
-  const { connections, handleConnectionsChange, addConnection, replaceConnections } =
-    useDiagramConnections(initialContent.connections);
+  const lines = useDiagramConnections(initialContent.connections);
 
   const replaceContent = (content: DiagramContent) => {
     replaceItems(content.items);
-    replaceConnections(content.connections);
+    lines.replaceConnections(content.connections);
   };
 
-  return { items, connections, handleItemsChange, handleConnectionsChange, addItemAt, addConnection, replaceContent };
+  return {
+    items,
+    connections: lines.connections,
+    handleItemsChange,
+    handleConnectionsChange: lines.handleConnectionsChange,
+    addItemAt,
+    addConnection: lines.addConnection,
+    updateConnection: lines.updateConnection,
+    flipConnection: lines.flipConnection,
+    replaceContent,
+  };
 }
