@@ -32,7 +32,7 @@ export function ItemCard({ id, data, selected }: NodeProps<DiagramItem>) {
           onFocus={() => editing.setFocusedFieldId(nameFieldId)}
         />
         <ItemRows rows={data.rows} rules={rules} editing={editing} />
-        <div className={`${styles.removeHolder} nodrag`}>
+        <div className={`${styles.removeHolder} nodrag`} data-export-hidden="true">
           <Tooltip text="Remove box">
             <Button variant="remove" label="Remove box" onClick={editing.removeItem}>
               <Icon shape={X} />
