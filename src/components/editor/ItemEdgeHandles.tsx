@@ -9,14 +9,14 @@ export function ItemEdgeHandles({ itemId }: ItemEdgeHandlesProps) {
 
   return (
     <>
-      <Handle className={styles.edge} type="source" position={Position.Top}>
+      <Handle className={styles.edge} type="source" position={Position.Top} data-export-hidden="true">
         <span className={styles.dot} />
         <span className={styles.dot} />
         <span className={styles.dot} />
         <span className={styles.dot} />
       </Handle>
       {canReceiveLine && (
-        <Handle className={styles.dropArea} type="target" position={Position.Top} isConnectableStart={false} />
+        <Handle className={styles.dropArea} type="target" position={Position.Top} isConnectableStart={false} data-export-hidden="true" />
       )}
     </>
   );
