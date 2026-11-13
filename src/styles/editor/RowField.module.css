@@ -1,3 +1,10 @@
+.name,
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
 .name {
   padding: var(--space-1) var(--space-2);
   font-weight: 600;
@@ -6,6 +13,25 @@
 
 .row {
   padding: 1px var(--space-2);
+}
+
+.attributes {
+  order: 1;
+}
+
+.methods {
+  order: 3;
+}
+
+.emphasised {
+  font-style: italic;
+}
+
+.field {
+  position: relative;
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .input {
@@ -20,6 +46,7 @@
   color: inherit;
   font-family: var(--font-code), Consolas, "Courier New", monospace;
   font-size: var(--size-text-item);
+  font-style: inherit;
   font-weight: inherit;
   line-height: 1.4;
   text-align: inherit;
@@ -38,4 +65,62 @@
   color: currentColor;
   font-weight: 400;
   opacity: 0.55;
+}
+
+.hiddenText {
+  color: transparent;
+}
+
+.mirror {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  padding: 2px;
+  font-family: var(--font-code), Consolas, "Courier New", monospace;
+  font-size: var(--size-text-item);
+  line-height: 1.4;
+  text-align: inherit;
+  white-space: pre;
+  pointer-events: none;
+}
+
+.plain {
+  color: inherit;
+}
+
+.visibility {
+  color: var(--color-accent);
+}
+
+.type {
+  color: var(--color-text-secondary);
+}
+
+.key {
+  color: var(--color-key);
+}
+
+.foreign {
+  color: var(--color-accent);
+}
+
+.markerSlot {
+  display: inline-flex;
+  flex: none;
+  gap: 1px;
+  width: 1.75rem;
+}
+
+.primaryIcon,
+.foreignIcon {
+  width: 0.8125rem;
+  height: 0.8125rem;
+}
+
+.primaryIcon {
+  color: var(--color-key);
+}
+
+.foreignIcon {
+  color: var(--color-accent);
 }
