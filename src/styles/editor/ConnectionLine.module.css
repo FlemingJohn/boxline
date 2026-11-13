@@ -24,3 +24,20 @@
 .removeIcon {
   stroke: currentColor;
 }
+
+.dashed {
+  stroke-dasharray: 6 4;
+}
+
+.labels {
+  pointer-events: none;
+}
+
+.label {
+  fill: var(--color-text);
+  font: 500 12px var(--font-code), Consolas, monospace;
+  paint-order: stroke;
+  stroke: var(--color-surface);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
