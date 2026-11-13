@@ -20,5 +20,11 @@ export function useDiagramItems(initialItems: DiagramItem[]) {
     );
   };
 
-  return { items, handleItemsChange, addItemAt, replaceItems };
+  const moveItems = (positions: Map<string, XYPosition>) => {
+    setItems((currentItems) =>
+      currentItems.map((item) => ({ ...item, position: positions.get(item.id) ?? item.position })),
+    );
+  };
+
+  return { items, handleItemsChange, addItemAt, replaceItems, moveItems };
 }
